@@ -26,32 +26,26 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(11,29,58,0.08)]'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <div
-                className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                  scrolled
+                className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${scrolled
                     ? 'bg-[var(--color-navy)]'
                     : 'bg-white/20 backdrop-blur-sm border border-white/20'
-                }`}
+                  }`}
               >
-                <Building2
-                  size={20}
-                  className={scrolled ? 'text-[var(--color-gold)]' : 'text-white'}
-                />
+                <img src="/images/loog.jpg" alt="Logo" />
               </div>
               <span
-                className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
-                  scrolled ? 'text-[var(--color-navy)]' : 'text-white'
-                }`}
+                className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-[var(--color-navy)]' : 'text-white'
+                  }`}
                 style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
               >
                 Teeside{' '}
@@ -67,11 +61,10 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/10 ${
-                    scrolled
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/10 ${scrolled
                       ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-navy)] hover:bg-[var(--color-bg-tertiary)]'
                       : 'text-white/80 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -82,11 +75,10 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/properties"
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                  scrolled
+                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${scrolled
                     ? 'text-[var(--color-navy)] border-2 border-[var(--color-navy)]/20 hover:border-[var(--color-navy)]/40 hover:bg-[var(--color-navy)]/5'
                     : 'text-white border-2 border-white/30 hover:border-white/60 hover:bg-white/10'
-                }`}
+                  }`}
               >
                 <Search size={16} />
                 Find a Home
@@ -103,9 +95,8 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                scrolled ? 'text-[var(--color-navy)]' : 'text-white'
-              }`}
+              className={`lg:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-[var(--color-navy)]' : 'text-white'
+                }`}
               aria-label="Toggle menu"
             >
               {menuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -12,7 +12,7 @@
   --color-navy-dark: #07132A;
   --color-steel: #1E3A5F;
   --color-steel-light: #2A4D7A;
-  --color-gold: #C8A951;
+  --color-gold: #C02231;
   --color-gold-light: #D4BC72;
   --color-gold-dark: #A88B3D;
   --color-warm-white: #F8F6F1;
@@ -301,6 +301,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -308,8 +309,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -317,6 +323,7 @@ body {
     opacity: 0;
     transform: translateY(100%);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -324,18 +331,37 @@ body {
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 169, 81, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(200, 169, 81, 0); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 169, 81, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(200, 169, 81, 0);
+  }
 }
 
 .animate-fade-in-up {
