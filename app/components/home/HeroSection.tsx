@@ -21,7 +21,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-nairobi.png"
+          src="/images/hero.jpg"
           alt="Nairobi skyline — Westlands and Upperhill business district at golden hour"
           fill
           className="object-cover"
