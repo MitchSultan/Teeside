@@ -113,7 +113,7 @@ export default function MarketSnapshot() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="neu-raised p-5 sm:p-6"
+              className="shadow-md p-5 sm:p-6"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 rounded-xl bg-[var(--color-navy)]/5 flex items-center justify-center">

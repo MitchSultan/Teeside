@@ -1,5 +1,7 @@
 import HeroSection from './components/home/HeroSection';
 import FeaturedListings from './components/home/FeaturedListings';
+import AboutSection from './components/home/AboutSection';
+import TeamSection from './components/home/TeamSection';
 import NeighborhoodExplorer from './components/home/NeighborhoodExplorer';
 import LandlordCTA from './components/home/LandlordCTA';
 import TrustBanner from './components/home/TrustBanner';
@@ -21,11 +23,15 @@ export default function Home() {
         </div>
       </section>
 
+      <AboutSection />
+
       {/* Featured Listings */}
       <FeaturedListings />
 
       {/* Neighborhood Explorer */}
       <NeighborhoodExplorer />
+
+      <TeamSection/>
 
       {/* Market Snapshot */}
       <MarketSnapshot />

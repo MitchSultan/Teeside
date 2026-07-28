@@ -29,8 +29,8 @@ export default function HeroSection() {
           sizes="100vw"
         />
         {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-navy)]/70 via-[var(--color-navy)]/50 to-[var(--color-navy)]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-navy)]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-(--color-navy)/70 via-(--color-navy)/50 to(--color-navy)/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-(--color-navy)/40 to-transparent" />
       </div>
 
       {/* Content */}
@@ -41,11 +41,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white/15 mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-[var(--color-success-light)] animate-pulse" />
-            <span className="text-sm font-medium text-white/90">
-              Nairobi&apos;s Most Trusted Property Partner
+            <span className="w-2 h-2 rounded-full bg-(--color-gold) animate-pulse" />
+            <span className="text-sm font-medium text-black ">
+              Your Property, Our Priority
             </span>
           </motion.div>
 
@@ -57,9 +57,9 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6"
             style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
           >
-            Your Gateway to{' '}
-            <span className="text-[var(--color-gold)]">Nairobi&apos;s</span>{' '}
-            Finest Properties
+            The best Property managers in{' '}
+            <span className="text-(--color-gold)">Nairobi</span>{' '}
+            
           </motion.h1>
 
           {/* Audience Toggle */}
@@ -131,8 +131,8 @@ export default function HeroSection() {
                   List Your Property
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="tel:+254700000000" className="btn-secondary !text-base !py-4 !px-8">
-                  Call Us: +254 700 000 000
+                <Link href="tel:+254722841455" className="btn-secondary !text-base !py-4 !px-8">
+                  Call Us: +254 722841455
                 </Link>
               </>
             )}

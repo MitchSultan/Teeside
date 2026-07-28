@@ -19,23 +19,23 @@ const seoLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-navy)] text-white/80">
+    <footer className="bg-(--color-navy) text-white/80">
       {/* Trust Bar */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             <div className="flex items-center gap-2">
-              <Shield size={20} className="text-[var(--color-gold)]" />
+              <Shield size={20} className="text-(--color-gold)" />
               <span className="text-sm font-medium text-white/90">EARB Registered</span>
             </div>
             <div className="w-px h-5 bg-white/20 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <Award size={20} className="text-[var(--color-gold)]" />
+              <Award size={20} className="text-(--color-gold)" />
               <span className="text-sm font-medium text-white/90">KPDA Member</span>
             </div>
             <div className="w-px h-5 bg-white/20 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <Shield size={20} className="text-[var(--color-success-light)]" />
+              <Shield size={20} className="text-(--color-success-light)" />
               <span className="text-sm font-medium text-white/90">ArdhiSasa Verified</span>
             </div>
           </div>
@@ -49,13 +49,13 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
-                <Building2 size={20} className="text-[var(--color-gold)]" />
+                <Building2 size={20} className="text-(--color-gold)" />
               </div>
               <span
                 className="text-xl font-bold text-white"
                 style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
               >
-                Teeside <span className="text-[var(--color-gold)]">Properties</span>
+                Teeside <span className="text-(--color-gold)">Properties</span>
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">
@@ -63,16 +63,16 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2.5">
               <a href="tel:+254700000000" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
-                <Phone size={15} className="text-[var(--color-gold)]" />
-                +254 700 000 000
+                <Phone size={15} className="text-(--color-gold)" />
+                +254 722 841455
               </a>
               <a href="mailto:info@teeside.co.ke" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
-                <Mail size={15} className="text-[var(--color-gold)]" />
-                info@teeside.co.ke
+                <Mail size={15} className="text-(--color-gold)" />
+                teesidemanagementltd@gmail.com
               </a>
               <div className="flex items-center gap-2.5 text-sm">
-                <MapPin size={15} className="text-[var(--color-gold)] shrink-0" />
-                Westlands, Nairobi, Kenya
+                <MapPin size={15} className="text-(--color-gold) shrink-0" />
+                Northern Bypass, Nairobi, Kenya
               </div>
             </div>
           </div>

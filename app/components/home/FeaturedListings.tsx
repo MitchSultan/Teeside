@@ -81,7 +81,7 @@ export default function FeaturedListings() {
                 className="snap-start shrink-0 w-[320px] sm:w-[340px]"
               >
                 <Link href={`/properties/${property.id}`} className="block">
-                  <div className="neu-raised overflow-hidden group">
+                  <div className="shadow-md bg-tertiary overflow-hidden group">
                     {/* Image */}
                     <div className="relative h-52 overflow-hidden">
                       <Image
