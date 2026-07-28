@@ -147,7 +147,7 @@ export default function HeroSection() {
         transition={{ delay: 0.8, duration: 0.6 }}
         className="absolute bottom-0 left-0 right-0 z-10"
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 lg:pb-10">
+        {/* <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 lg:pb-10">
           <div className="glass rounded-2xl p-4 sm:p-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {stats.map((stat, i) => (
@@ -165,7 +165,7 @@ export default function HeroSection() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </motion.div>
     </section>
   );

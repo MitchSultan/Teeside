@@ -44,7 +44,7 @@ export default function SearchBar() {
   return (
     <div ref={searchRef} className="w-full max-w-4xl mx-auto">
       {/* Main Search Input */}
-      <div className="neu-raised-sm !rounded-2xl overflow-hidden">
+      <div className="shadow-md bg-white !rounded-2xl overflow-hidden">
         <div className="flex items-center gap-3 px-5 py-4">
           <Search size={20} className="text-[var(--color-text-muted)] shrink-0" />
           <input
