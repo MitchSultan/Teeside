@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -11,13 +12,24 @@ const propertyTypes = ['All', 'Apartment', 'House', 'Penthouse', 'Bedsitter', 'S
 const neighborhoods = ['All', 'Kilimani', 'Westlands', 'Kileleshwa', 'Lavington', 'Upperhill', 'Ruaka', 'Kitengela', 'Syokimau', 'Ruiru'];
 const sortOptions = ['Newest', 'Price: Low to High', 'Price: High to Low', 'Most Popular'];
 
-export default function PropertiesPage() {
+function PropertiesContent() {
+  const searchParams = useSearchParams();
+  const paramSearch = searchParams.get('search') ?? searchParams.get('q') ?? '';
+  const paramType = searchParams.get('type') ?? 'All';
+  const paramCity = searchParams.get('city') ?? searchParams.get('neighborhood') ?? 'All';
+
   const [view, setView] = useState<'grid' | 'list'>('grid');
-  const [search, setSearch] = useState('');
-  const [typeFilter, setTypeFilter] = useState('All');
-  const [neighborhoodFilter, setNeighborhoodFilter] = useState('All');
+  const [search, setSearch] = useState(paramSearch);
+  const [typeFilter, setTypeFilter] = useState(paramType);
+  const [neighborhoodFilter, setNeighborhoodFilter] = useState(paramCity);
   const [sort, setSort] = useState('Newest');
   const [showFilters, setShowFilters] = useState(false);
+
+  useEffect(() => {
+    if (paramSearch) setSearch(paramSearch);
+    if (paramType && paramType !== 'All') setTypeFilter(paramType);
+    if (paramCity && paramCity !== 'All') setNeighborhoodFilter(paramCity);
+  }, [paramSearch, paramType, paramCity]);
 
   const filtered = useMemo(() => {
     let result = [...properties];
@@ -174,7 +186,7 @@ export default function PropertiesPage() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
                 <Link href={`/properties/${property.id}`} className="block">
-                  <div className={`neu-raised overflow-hidden group ${view === 'list' ? 'flex flex-col sm:flex-row' : ''}`}>
+                  <div className={`shadow-md min-h-96 overflow-hidden group ${view === 'list' ? 'flex flex-col sm:flex-row' : ''}`}>
                     {/* Image */}
                     <div className={`relative overflow-hidden ${view === 'list' ? 'h-48 sm:h-auto sm:w-72 shrink-0' : 'h-52'}`}>
                       <Image
@@ -234,4 +246,12 @@ export default function PropertiesPage() {
       </div>
     </div>
   );
+}
+
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={<div className="pt-24 text-center py-20">Loading properties…</div>}>
+      <PropertiesContent />
+    </Suspense>
+  )
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function layout() {
-  return (
-    <div></div>
-  )
+export default function LoginLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <>{children}</>
 }

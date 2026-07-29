@@ -75,17 +75,17 @@ export default function LandlordCTA() {
               <span className="text-[var(--color-gold)]">Property Portfolio</span>
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
-              Join 500+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance — while you earn passive income.
+              Join 50+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance — while you earn passive income.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="btn-primary !text-base">
-                <Phone size={18} />
-                Partner With Us
+                {/* <Phone size={18} /> */}
+                Contact Us
                 <ArrowRight size={18} />
               </Link>
-              <Link href="tel:+254700000000" className="btn-secondary !text-base">
-                Call: +254 700 000 000
+              <Link href="tel:+254722841455" className="btn-secondary !text-base">
+                Call: +254 722 841 455
               </Link>
             </div>
 

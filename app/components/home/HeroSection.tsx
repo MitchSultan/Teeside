@@ -69,7 +69,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5 }}
             className="mb-6"
           >
-            <div className="inline-flex rounded-full p-1 bg-white/10 backdrop-blur-md border border-white/15">
+            <div className="inline-flex flex-row-reverse rounded-full p-1 bg-white/10 backdrop-blur-md border border-white/15">
               <button
                 onClick={() => setAudience('tenant')}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
@@ -126,11 +126,11 @@ export default function HeroSection() {
               </>
             ) : (
               <>
-                <Link href="/#landlord" className="btn-primary !text-base !py-4 !px-8">
+                {/* <Link href="/#landlord" className="btn-primary !text-base !py-4 !px-8">
                   <Building size={20} />
                   List Your Property
                   <ArrowRight size={18} />
-                </Link>
+                </Link> */}
                 <Link href="tel:+254722841455" className="btn-secondary !text-base !py-4 !px-8">
                   Call Us: +254 722841455
                 </Link>

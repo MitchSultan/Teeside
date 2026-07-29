@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'Properties', href: '/properties' },
-    { label: 'Neighborhoods', href: '/#neighborhoods' },
+    { label: 'Services', href: '/services' },
     { label: 'Diaspora Portal', href: '/diaspora' },
     { label: 'Market Insights', href: '/market' },
     { label: 'Mortgage Calculator', href: '/tools/mortgage-calculator' },
@@ -62,8 +62,8 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/10 ${scrolled
-                      ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-navy)] hover:bg-[var(--color-bg-tertiary)]'
-                      : 'text-white/80 hover:text-white'
+                      ? 'text-(--color-text-secondary) hover:text-(--color-navy) hover:bg-(--color-bg-tertiary)'
+                      : 'text-red/50 hover:text-black'
                     }`}
                 >
                   {link.label}
@@ -73,7 +73,7 @@ export default function Navbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link
+              {/* <Link
                 href="/properties"
                 className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${scrolled
                     ? 'text-[var(--color-navy)] border-2 border-[var(--color-navy)]/20 hover:border-[var(--color-navy)]/40 hover:bg-[var(--color-navy)]/5'
@@ -82,13 +82,13 @@ export default function Navbar() {
               >
                 <Search size={16} />
                 Find a Home
-              </Link>
+              </Link> */}
               <Link
-                href="/#landlord"
+                href="tel:+254722841455" 
                 className="btn-primary !py-2.5 !px-5 !text-sm"
               >
                 <Phone size={16} />
-                List Your Property
+                Call Us
               </Link>
             </div>
 

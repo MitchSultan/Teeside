@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
+import { submitVirtualTourBooking } from '@/lib/actions/tours';
 import { Globe, Video, Scale, Shield, CreditCard, Phone, Calendar, ChevronDown, ChevronUp, ArrowRight, Building2, Clock, CheckCircle, FileText } from 'lucide-react';
 
 const faqs = [
@@ -38,25 +40,63 @@ const steps = [
 
 export default function DiasporaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [fullName, setFullName] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [email, setEmail] = useState('')
+  const [timezone, setTimezone] = useState('')
+  const [platform, setPlatform] = useState('Zoom')
+  const [notes, setNotes] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+
+  async function handleTourSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (!fullName || !whatsapp || !email) {
+      toast.error('Please fill in your name, email, and WhatsApp number')
+      return
+    }
+
+    setSubmitting(true)
+    const result = await submitVirtualTourBooking({
+      full_name: fullName,
+      phone: whatsapp,
+      email,
+      timezone: timezone || undefined,
+      platform,
+      notes: notes || undefined,
+    })
+    setSubmitting(false)
+
+    if (result.error) {
+      toast.error(result.error)
+      return
+    }
+
+    toast.success('Virtual inspection booked! Our diaspora agent will contact you shortly.')
+    setFullName('')
+    setWhatsapp('')
+    setEmail('')
+    setTimezone('')
+    setNotes('')
+  }
 
   return (
     <div className="pt-20 lg:pt-24 pb-16">
       {/* Hero */}
-      <section className="relative bg-[var(--color-navy)] py-16 lg:py-24 overflow-hidden">
+      <section className="relative bg-[url(/images/dia-hero.jpeg)] bg-no-repeat bg-cover bg-center py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-gold)]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-(--color-gold)/10 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 mb-6">
-              <Globe size={16} className="text-[var(--color-gold)]" />
+              <Globe size={16} className="text-(--color-gold)" />
               <span className="text-sm font-medium text-white/90">For Kenyans Abroad</span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-5" style={{ fontFamily: 'var(--font-inter)' }}>
-              Invest in Nairobi Real Estate <span className="text-[var(--color-gold)]">From Anywhere</span>
+              Invest in Nairobi Real Estate <br></br><span className="text-(--color-gold)">From Anywhere</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl">
@@ -76,16 +116,16 @@ export default function DiasporaPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 lg:py-24 bg-[var(--color-bg-primary)]">
+      <section className="py-16 lg:py-24 bg-(--color-bg-primary)">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">How It Works</span>
+            <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">How It Works</span>
             <h2 className="section-title">5 Simple Steps to Own Property in Kenya</h2>
           </div>
 
           <div className="relative grid grid-cols-1 sm:grid-cols-5 gap-6">
             {/* Connecting line */}
-            <div className="hidden sm:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-[var(--color-warm-gray)]" />
+            <div className="hidden sm:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-(--color-warm-gray)" />
 
             {steps.map((step, i) => (
               <motion.div
@@ -96,12 +136,12 @@ export default function DiasporaPage() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center relative"
               >
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-bg-tertiary)] mx-auto mb-4 flex items-center justify-center relative z-10 border-4 border-[var(--color-bg-primary)]">
-                  <step.icon size={28} className="text-[var(--color-navy)]" />
+                <div className="w-16 h-16 rounded-2xl bg-(--color-bg-tertiary) mx-auto mb-4 flex items-center justify-center relative z-10 border-4 border-[var(--color-bg-primary)]">
+                  <step.icon size={28} className="text-(--color-navy)" />
                 </div>
-                <span className="text-xs font-bold text-[var(--color-gold)] mb-1 block">Step {i + 1}</span>
-                <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1" style={{ fontFamily: 'var(--font-inter)' }}>{step.title}</h3>
-                <p className="text-xs text-[var(--color-text-muted)] leading-relaxed">{step.desc}</p>
+                <span className="text-xs font-bold text-(--color-gold) mb-1 block">Step {i + 1}</span>
+                <h3 className="text-sm font-semibold text-(--color-text-primary) mb-1" style={{ fontFamily: 'var(--font-inter)' }}>{step.title}</h3>
+                <p className="text-xs text-(--color-text-muted) leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -109,11 +149,11 @@ export default function DiasporaPage() {
       </section>
 
       {/* Virtual Inspection */}
-      <section id="virtual-inspection" className="py-16 lg:py-24 bg-[var(--color-bg-secondary)]">
+      <section id="virtual-inspection" className="py-16 lg:py-24 bg-(--color-bg-secondary)">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">Virtual Inspections</span>
+              <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">Virtual Inspections</span>
               <h2 className="section-title mb-4">See Every Detail — Without Leaving Home</h2>
               <p className="section-subtitle mb-6">Book a live video walkthrough with our on-ground agents at a time that suits your timezone. Available 7 days a week.</p>
 
@@ -125,10 +165,10 @@ export default function DiasporaPage() {
                   { icon: Calendar, text: 'Flexible scheduling — weekdays & weekends' },
                 ].map(item => (
                   <div key={item.text} className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[var(--color-gold)]/10 flex items-center justify-center shrink-0">
-                      <item.icon size={18} className="text-[var(--color-gold)]" />
+                    <div className="w-9 h-9 rounded-lg bg-(--color-gold)/10 flex items-center justify-center shrink-0">
+                      <item.icon size={18} className="text-(--color-gold)" />
                     </div>
-                    <span className="text-sm text-[var(--color-text-secondary)]">{item.text}</span>
+                    <span className="text-sm text-(--color-text-secondary)">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -139,31 +179,67 @@ export default function DiasporaPage() {
             </div>
 
             {/* Booking Form */}
-            <div className="neu-raised p-6 sm:p-8">
+            <div className="shadow-md p-6 sm:p-8">
               <h3 className="text-lg font-semibold text-[var(--color-navy)] mb-5" style={{ fontFamily: 'var(--font-inter)' }}>Book Virtual Inspection</h3>
-              <form className="space-y-4" onSubmit={e => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={handleTourSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Full Name" className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30" />
-                  <input type="tel" placeholder="WhatsApp Number" className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30" />
+                  <input
+                    type="text"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Full Name *"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30"
+                  />
+                  <input
+                    type="tel"
+                    required
+                    value={whatsapp}
+                    onChange={(e) => setWhatsapp(e.target.value)}
+                    placeholder="WhatsApp Number *"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30"
+                  />
                 </div>
-                <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30" />
-                <select className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none text-[var(--color-text-secondary)]">
-                  <option>Your Timezone</option>
-                  <option>East Africa (EAT, UTC+3)</option>
-                  <option>United Kingdom (GMT/BST)</option>
-                  <option>US Eastern (EST/EDT)</option>
-                  <option>US Pacific (PST/PDT)</option>
-                  <option>UAE (GST, UTC+4)</option>
-                  <option>Australia (AEST, UTC+10)</option>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email Address *"
+                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30"
+                />
+                <select
+                  value={timezone}
+                  onChange={(e) => setTimezone(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none text-[var(--color-text-secondary)]"
+                >
+                  <option value="">Select Timezone (optional)</option>
+                  <option value="East Africa (EAT, UTC+3)">East Africa (EAT, UTC+3)</option>
+                  <option value="United Kingdom (GMT/BST)">United Kingdom (GMT/BST)</option>
+                  <option value="US Eastern (EST/EDT)">US Eastern (EST/EDT)</option>
+                  <option value="US Pacific (PST/PDT)">US Pacific (PST/PDT)</option>
+                  <option value="UAE (GST, UTC+4)">UAE (GST, UTC+4)</option>
+                  <option value="Australia (AEST, UTC+10)">Australia (AEST, UTC+10)</option>
                 </select>
-                <select className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none text-[var(--color-text-secondary)]">
-                  <option>Preferred Platform</option>
-                  <option>Zoom</option>
-                  <option>WhatsApp Video</option>
-                  <option>Google Meet</option>
+                <select
+                  value={platform}
+                  onChange={(e) => setPlatform(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none text-[var(--color-text-secondary)]"
+                >
+                  <option value="Zoom">Zoom</option>
+                  <option value="WhatsApp Video">WhatsApp Video</option>
+                  <option value="Google Meet">Google Meet</option>
                 </select>
-                <input type="text" placeholder="Property of Interest (optional)" className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30" />
-                <button type="submit" className="btn-primary w-full">Submit Booking Request</button>
+                <input
+                  type="text"
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Property or Notes (optional)"
+                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] text-sm outline-none focus:ring-2 focus:ring-[var(--color-gold)]/30"
+                />
+                <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50">
+                  {submitting ? 'Submitting…' : 'Submit Booking Request'}
+                </button>
               </form>
             </div>
           </div>
@@ -171,10 +247,10 @@ export default function DiasporaPage() {
       </section>
 
       {/* Secure Payments */}
-      <section className="py-16 lg:py-24 bg-[var(--color-bg-primary)]">
+      <section className="py-16 lg:py-24 bg-(--color-bg-primary)">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">System-Based Trust</span>
+            <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">System-Based Trust</span>
             <h2 className="section-title">Secure Payment Options</h2>
             <p className="section-subtitle mx-auto mt-3">Every shilling tracked, every transaction verified</p>
           </div>
@@ -185,12 +261,12 @@ export default function DiasporaPage() {
               { icon: Building2, title: 'Bank APIs', desc: 'Direct transfers to our escrow account via KCB, Equity, Cooperative, or international SWIFT wire.', color: 'var(--color-navy)' },
               { icon: Shield, title: 'Escrow Tracking', desc: 'Funds held in a regulated escrow account until all conditions are met. Full transparency dashboard.', color: 'var(--color-gold)' },
             ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="neu-raised p-6 text-center">
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="shadow-md p-6 text-center">
                 <div className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: `color-mix(in srgb, ${item.color} 10%, transparent)` }}>
                   <item.icon size={28} style={{ color: item.color }} />
                 </div>
-                <h3 className="text-base font-semibold text-[var(--color-text-primary)] mb-2" style={{ fontFamily: 'var(--font-inter)' }}>{item.title}</h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{item.desc}</p>
+                <h3 className="text-base font-semibold text-(--color-text-primary) mb-2" style={{ fontFamily: 'var(--font-inter)' }}>{item.title}</h3>
+                <p className="text-sm text-(--color-text-muted) leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -198,22 +274,22 @@ export default function DiasporaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 lg:py-24 bg-[var(--color-bg-secondary)]">
+      <section className="py-16 lg:py-24 bg-(--color-bg-secondary)">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">Power of Attorney & Legal</span>
+            <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">Power of Attorney & Legal</span>
             <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <div key={i} className="neu-raised-sm overflow-hidden">
+              <div key={i} className="shadow-md overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 text-left"
                 >
-                  <span className="text-sm font-semibold text-[var(--color-text-primary)] pr-4">{faq.q}</span>
-                  {openFaq === i ? <ChevronUp size={18} className="text-[var(--color-text-muted)] shrink-0" /> : <ChevronDown size={18} className="text-[var(--color-text-muted)] shrink-0" />}
+                  <span className="text-sm font-semibold text-(--color-text-primary) pr-4">{faq.q}</span>
+                  {openFaq === i ? <ChevronUp size={18} className="text-(--color-text-muted) shrink-0" /> : <ChevronDown size={18} className="text-[var(--color-text-muted)] shrink-0" />}
                 </button>
                 {openFaq === i && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-5 pb-5">

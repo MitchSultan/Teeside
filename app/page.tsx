@@ -1,6 +1,9 @@
 import HeroSection from './components/home/HeroSection';
 import FeaturedListings from './components/home/FeaturedListings';
 import AboutSection from './components/home/AboutSection';
+import ServicesSection from './components/home/ServicesSection';
+import WhyChooseUs from './components/home/WhyChooseUs';
+import FeeStructure from './components/home/FeeStructure';
 import TeamSection from './components/home/TeamSection';
 import NeighborhoodExplorer from './components/home/NeighborhoodExplorer';
 import LandlordCTA from './components/home/LandlordCTA';
@@ -25,8 +28,17 @@ export default function Home() {
 
       <AboutSection />
 
+      {/* 4 Main Services */}
+      <ServicesSection />
+
+      {/* Why Choose Us */}
+      
+
       {/* Featured Listings */}
       <FeaturedListings />
+
+      {/* Transparent Fee Structure */}
+      {/* <FeeStructure /> */}
 
       {/* Neighborhood Explorer */}
       <NeighborhoodExplorer />
@@ -41,6 +53,8 @@ export default function Home() {
 
       {/* Trust & Credibility */}
       <TrustBanner />
+
+      <WhyChooseUs />
 
       {/* Testimonials */}
       <TestimonialSection />

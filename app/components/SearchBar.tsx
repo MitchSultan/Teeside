@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Search, SlidersHorizontal, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -10,6 +11,7 @@ const bedroomOptions = ['Any', 'Bedsitter', '1', '2', '3', '4', '5+'];
 const statusOptions = ['All Status', 'Ready for Occupation', 'Off-Plan', 'Repossessed'];
 
 export default function SearchBar() {
+  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
   const [query, setQuery] = useState('');
   const [propertyType, setPropertyType] = useState('All Types');
@@ -19,6 +21,14 @@ export default function SearchBar() {
   const [currency, setCurrency] = useState<'KES' | 'USD'>('KES');
   const [status, setStatus] = useState('All Status');
   const searchRef = useRef<HTMLDivElement>(null);
+
+  function handleSearch() {
+    const params = new URLSearchParams();
+    if (query) params.set('search', query);
+    if (propertyType && propertyType !== 'All Types') params.set('type', propertyType.toLowerCase());
+    if (neighborhood) params.set('city', neighborhood);
+    router.push(`/properties?${params.toString()}`);
+  }
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -51,6 +61,9 @@ export default function SearchBar() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSearch();
+            }}
             placeholder="Search by location, property name, or keyword..."
             className="flex-1 bg-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] outline-none text-base"
             onFocus={() => setExpanded(true)}
@@ -66,7 +79,7 @@ export default function SearchBar() {
             <SlidersHorizontal size={16} />
             <span className="hidden sm:inline">Filters</span>
           </button>
-          <button className="btn-primary !py-2.5 !px-6 !text-sm">
+          <button onClick={handleSearch} className="btn-primary !py-2.5 !px-6 !text-sm">
             Search
           </button>
         </div>
@@ -241,7 +254,7 @@ export default function SearchBar() {
               >
                 Clear all filters
               </button>
-              <button className="btn-primary !py-2.5 !px-8 !text-sm">
+              <button onClick={handleSearch} className="btn-primary !py-2.5 !px-8 !text-sm">
                 Show Results
               </button>
             </div>

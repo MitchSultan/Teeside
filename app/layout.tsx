@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, DM_Sans, Geist } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import MobileNav from "./components/MobileNav";
-import Footer from "./components/Footer";
 import { cn } from "@/lib/utils";
+import { ConditionalChrome } from "@/components/conditional-chrome";
+import { Toaster } from "@/components/ui/sonner";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -62,13 +61,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn("h-full", "antialiased", inter.variable, dmSans.variable, "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col bg-[var(--color-bg-primary)]">
-        <Navbar />
-        <main className="flex-1 mobile-nav-safe">{children}</main>
-        <Footer />
-        <MobileNav />
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-[var(--color-bg-primary)]">
+        <ConditionalChrome>{children}</ConditionalChrome>
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );

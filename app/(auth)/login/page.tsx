@@ -1,32 +1,34 @@
-"use client"
+import { Building2 } from 'lucide-react'
+import { LoginForm } from '@/components/login-form'
 
-import { LoginForm } from "@/components/login-form"
-import { IconLayoutRows } from "@tabler/icons-react"
+export const dynamic = 'force-dynamic'
 
-export default function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ redirect?: string }>
+}) {
+  const params = await searchParams
+
   return (
-    <div className="grid min-h-svh lg:grid-cols-2">
+    <div className="grid min-h-svh lg:grid-cols-2 bg-background">
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
-          <a href="#" className="flex items-center gap-2 font-medium">
-            <div className="flex size-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
-              <IconLayoutRows className="size-4" />
+          <div className="flex items-center gap-2 font-medium">
+            <div className="flex size-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
+              <Building2 className="size-4" />
             </div>
-            Acme Inc.
-          </a>
+            Teeside Properties
+          </div>
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <div className="w-full max-w-xs">
-            <LoginForm />
+          <div className="w-full max-w-sm">
+            <LoginForm redirectTo={params.redirect ?? '/admin'} />
           </div>
         </div>
       </div>
       <div className="relative hidden bg-muted lg:block">
-        <img
-          src="/placeholder.svg"
-          alt="Image"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        />
+        <div className="absolute inset-0 bg-linear-to-br from-[#1a2744] to-[#2d4a7c]" />
       </div>
     </div>
   )

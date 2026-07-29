@@ -70,7 +70,7 @@ export default function MortgageCalculatorPage() {
           <button
             onClick={() => setMode('mortgage')}
             className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-              mode === 'mortgage' ? 'bg-[var(--color-navy)] text-white shadow-lg' : 'bg-[var(--color-bg-tertiary)] text-[var(--color-text-secondary)]'
+              mode === 'mortgage' ? 'bg-(--color-navy) text-white shadow-lg' : 'bg-(--color-bg-tertiary) text-(--color-text-secondary)'
             }`}
           >
             <Calculator size={16} className="inline mr-2" />
@@ -90,7 +90,7 @@ export default function MortgageCalculatorPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Inputs */}
           <div className="lg:col-span-3 space-y-6">
-            <div className="neu-raised p-6 sm:p-8">
+            <div className="shadow-md p-6 sm:p-8">
               {/* Property Price */}
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-[var(--color-navy)] mb-2">Property Price (KES)</label>
@@ -199,7 +199,7 @@ export default function MortgageCalculatorPage() {
               key={`${mode}-${price}-${downPaymentPercent}-${rate}-${tenure}`}
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="neu-raised p-6 sm:p-8"
+              className="shadow-md p-6 sm:p-8"
             >
               <h3 className="text-base font-semibold text-[var(--color-navy)] mb-5" style={{ fontFamily: 'var(--font-inter)' }}>
                 {mode === 'mortgage' ? 'Mortgage Summary' : 'TPS Summary'}

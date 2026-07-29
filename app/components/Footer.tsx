@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Building2, Phone, Mail, MapPin, Shield, Award } from 'lucide-react';
+import { NewsletterForm } from '@/components/forms/NewsletterForm';
 
 const neighborhoods = [
   'Kilimani', 'Westlands', 'Kileleshwa', 'Lavington', 'Upperhill',
@@ -110,6 +111,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {[
                 { label: 'Browse Properties', href: '/properties' },
+                { label: 'Our Services', href: '/services' },
                 { label: 'Diaspora Portal', href: '/diaspora' },
                 { label: 'Mortgage Calculator', href: '/tools/mortgage-calculator' },
                 { label: 'Market Insights', href: '/market' },
@@ -154,16 +156,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="mt-6">
               <h4 className="text-white font-semibold text-sm mb-3">Stay Updated</h4>
-              <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-white/10 rounded-lg text-sm text-white placeholder-white/40 border border-white/10 focus:outline-none focus:border-[var(--color-gold)]/50 transition-colors"
-                />
-                <button type="submit" className="px-4 py-2 bg-[var(--color-gold)] text-[var(--color-navy)] text-sm font-semibold rounded-lg hover:bg-[var(--color-gold-light)] transition-colors">
-                  Join
-                </button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
         </div>

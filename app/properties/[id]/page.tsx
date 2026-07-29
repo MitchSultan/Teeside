@@ -97,24 +97,24 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             {/* Key Facts */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {property.bedrooms > 0 && (
-                <div className="neu-raised-sm p-4 text-center">
+                <div className="shadow-md p-4 text-center">
                   <Bed size={22} className="mx-auto text-[var(--color-navy)] mb-1" />
                   <p className="text-lg font-bold text-[var(--color-text-primary)]">{property.bedrooms}</p>
                   <p className="text-xs text-[var(--color-text-muted)]">Bedrooms</p>
                 </div>
               )}
-              <div className="neu-raised-sm p-4 text-center">
+              <div className="shadow-md p-4 text-center">
                 <Bath size={22} className="mx-auto text-[var(--color-navy)] mb-1" />
                 <p className="text-lg font-bold text-[var(--color-text-primary)]">{property.bathrooms}</p>
                 <p className="text-xs text-[var(--color-text-muted)]">Bathrooms</p>
               </div>
-              <div className="neu-raised-sm p-4 text-center">
+              <div className="shadow-md p-4 text-center">
                 <Maximize size={22} className="mx-auto text-[var(--color-navy)] mb-1" />
                 <p className="text-lg font-bold text-[var(--color-text-primary)]">{property.sqft.toLocaleString()}</p>
                 <p className="text-xs text-[var(--color-text-muted)]">Sq. Ft.</p>
               </div>
               {property.constructionYear > 0 && (
-                <div className="neu-raised-sm p-4 text-center">
+                <div className="shadow-md p-4 text-center">
                   <Calendar size={22} className="mx-auto text-[var(--color-navy)] mb-1" />
                   <p className="text-lg font-bold text-[var(--color-text-primary)]">{property.constructionYear}</p>
                   <p className="text-xs text-[var(--color-text-muted)]">Year Built</p>
@@ -153,7 +153,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             </div>
 
             {/* Price Analysis */}
-            <div className="neu-raised p-6">
+            <div className="shadow-md p-6">
               <h2 className="text-lg font-semibold text-[var(--color-navy)] mb-4" style={{ fontFamily: 'var(--font-inter)' }}>Investment Snapshot</h2>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div>
@@ -183,7 +183,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
           {/* Right — Sidebar */}
           <div className="space-y-6">
             {/* Agent Card */}
-            <div className="neu-raised p-6 sticky top-24">
+            <div className="shadow-md p-6 sticky top-24">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-[var(--color-bg-tertiary)] flex items-center justify-center">
                   <Building2 size={24} className="text-[var(--color-navy)]" />
@@ -217,7 +217,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             </div>
 
             {/* Mortgage Quick Calc */}
-            <div className="neu-raised p-6">
+            <div className="shadow-md p-6">
               <h3 className="text-base font-semibold text-[var(--color-navy)] mb-3" style={{ fontFamily: 'var(--font-inter)' }}>Mortgage Estimate</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between"><span className="text-[var(--color-text-muted)]">Property Price</span><span className="font-medium">{formatPrice(property.price)}</span></div>
@@ -241,7 +241,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {similar.map(sp => (
                 <Link key={sp.id} href={`/properties/${sp.id}`} className="block">
-                  <div className="neu-raised overflow-hidden group">
+                  <div className="shadow-md overflow-hidden group">
                     <div className="relative h-48">
                       <Image src={sp.images[0]} alt={sp.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="33vw" />
                       <div className="absolute bottom-3 left-3 price-badge">{formatPrice(sp.price)}</div>

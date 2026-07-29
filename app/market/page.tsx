@@ -33,7 +33,7 @@ function SimpleBarChart({ data }: { data: typeof yearlyData }) {
         const height = (d.avgPrice / maxPrice) * 100;
         return (
           <div key={d.year} className="flex-1 flex flex-col items-center gap-2">
-            <span className="text-xs font-semibold text-[var(--color-navy)]">
+            <span className="text-xs font-semibold text-(--color-navy)">
               {(d.avgPrice / 1000000).toFixed(1)}M
             </span>
             <motion.div
@@ -44,7 +44,7 @@ function SimpleBarChart({ data }: { data: typeof yearlyData }) {
               className="w-full rounded-t-lg"
               style={{ background: 'linear-gradient(to top, var(--color-navy), var(--color-steel-light))' }}
             />
-            <span className="text-xs text-[var(--color-text-muted)]">{d.year}</span>
+            <span className="text-xs text-(--color-text-muted)">{d.year}</span>
           </div>
         );
       })}
@@ -72,7 +72,7 @@ export default function MarketPage() {
             { icon: Home, label: 'Avg. Rent (2BR)', value: 'KES 65,000', sub: 'Per month across NMA', color: 'var(--color-navy)' },
             { icon: Percent, label: 'Avg. Rental Yield', value: '6.8%', sub: 'Gross yield 2025', color: 'var(--color-gold)' },
           ].map((m, i) => (
-            <motion.div key={m.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="neu-raised p-6">
+            <motion.div key={m.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="shadow-md p-6">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `color-mix(in srgb, ${m.color} 10%, transparent)` }}>
                   <m.icon size={22} style={{ color: m.color }} />
@@ -86,7 +86,7 @@ export default function MarketPage() {
         </div>
 
         {/* Price Trends Chart */}
-        <div className="neu-raised p-6 sm:p-8 mb-12">
+        <div className="shadow-md p-6 sm:p-8 mb-12">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <div>
               <h2 className="text-xl font-bold text-[var(--color-navy)]" style={{ fontFamily: 'var(--font-inter)' }}>Average Property Prices (NMA)</h2>

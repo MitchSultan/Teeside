@@ -4,6 +4,13 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { TrendingUp, ArrowRight, BarChart3, Home as HomeIcon, Percent } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const metrics = [
   {
@@ -72,6 +79,33 @@ function MiniSparkline({ data, color }: { data: number[]; color: string }) {
   );
 }
 
+function MetricCard({ metric }: { metric: (typeof metrics)[number] }) {
+  const Icon = metric.icon
+  return (
+    <div className="shadow-md bg-white p-5 sm:p-6 rounded-2xl h-full flex flex-col justify-between">
+      <div className="flex items-start justify-between mb-4">
+        <div className="w-10 h-10 rounded-xl bg-[var(--color-navy)]/5 flex items-center justify-center">
+          <Icon size={20} className="text-[var(--color-navy)]" />
+        </div>
+        <MiniSparkline data={metric.sparkline} color={metric.positive ? '#1B7A4A' : '#D94040'} />
+      </div>
+
+      <div>
+        <p className="text-xs text-[var(--color-text-muted)] mb-1">{metric.label}</p>
+        <p
+          className="text-2xl font-bold text-[var(--color-navy)] mb-1"
+          style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
+        >
+          {metric.value}
+        </p>
+        <p className={`text-xs font-medium ${metric.positive ? 'text-[var(--color-success)]' : 'text-[var(--color-error)]'}`}>
+          {metric.change}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export default function MarketSnapshot() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
@@ -105,35 +139,35 @@ export default function MarketSnapshot() {
           </Link>
         </motion.div>
 
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {/* Desktop Grid */}
+        <div className="hidden sm:grid sm:grid-cols-3 gap-5">
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="shadow-md p-5 sm:p-6"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[var(--color-navy)]/5 flex items-center justify-center">
-                  <metric.icon size={20} className="text-[var(--color-navy)]" />
-                </div>
-                <MiniSparkline data={metric.sparkline} color={metric.positive ? '#1B7A4A' : '#D94040'} />
-              </div>
-
-              <p className="text-xs text-[var(--color-text-muted)] mb-1">{metric.label}</p>
-              <p
-                className="text-2xl font-bold text-[var(--color-navy)] mb-1"
-                style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
-              >
-                {metric.value}
-              </p>
-              <p className={`text-xs font-medium ${metric.positive ? 'text-[var(--color-success)]' : 'text-[var(--color-error)]'}`}>
-                {metric.change}
-              </p>
+              <MetricCard metric={metric} />
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="sm:hidden">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {metrics.map((metric) => (
+                <CarouselItem key={metric.label} className="basis-[85%]">
+                  <MetricCard metric={metric} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-6">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>
