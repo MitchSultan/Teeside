@@ -26,10 +26,10 @@ const badges = [
 ];
 
 const stats = [
-  { value: '8+', label: 'Years in Nairobi Market' },
-  { value: '2,500+', label: 'Properties Listed' },
+  { value: '12+', label: 'Years in Nairobi Market' },
+  { value: '25+', label: 'Properties Listed' },
   { value: '4.8/5', label: 'Client Satisfaction' },
-  { value: 'KES 4.2B', label: 'Portfolio Value' },
+  { value: 'KES 1.2B', label: 'Portfolio Value' },
 ];
 
 export default function TrustBanner() {
@@ -44,10 +44,10 @@ export default function TrustBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className=" flex justify-between text-center mb-10"
         >
-          <h2 className="section-title">Trusted by Thousands</h2>
-          <p className="section-subtitle mx-auto mt-2">
+          <h2 className="section-title">Trusted by <br></br><span className="text-(--color-gold)"> Thousands </span></h2>
+          <p className=" text-right  mt-2">
             Fully licensed, verified, and committed to transparency
           </p>
         </motion.div>

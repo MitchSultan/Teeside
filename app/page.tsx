@@ -12,8 +12,14 @@ import MarketSnapshot from './components/home/MarketSnapshot';
 import TestimonialSection from './components/home/TestimonialSection';
 import CTABanner from './components/home/CTABanner';
 import SearchBar from './components/SearchBar';
+import BlogSection from './components/home/BlogSection';
+import { getFeaturedBlogs } from '@/lib/queries/blogs';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const featuredBlogs = await getFeaturedBlogs(3);
+
   return (
     <>
       {/* Hero with Nairobi skyline */}
@@ -31,33 +37,32 @@ export default function Home() {
       {/* 4 Main Services */}
       <ServicesSection />
 
-      {/* Why Choose Us */}
-      
-
       {/* Featured Listings */}
       <FeaturedListings />
-
-      {/* Transparent Fee Structure */}
-      {/* <FeeStructure /> */}
 
       {/* Neighborhood Explorer */}
       <NeighborhoodExplorer />
 
-      <TeamSection/>
+     
+
+      {/* <TeamSection /> */}
 
       {/* Market Snapshot */}
       <MarketSnapshot />
 
       {/* Landlord CTA */}
       <LandlordCTA />
+      {/* Testimonials */}
+      <TestimonialSection />
 
       {/* Trust & Credibility */}
       <TrustBanner />
 
       <WhyChooseUs />
 
-      {/* Testimonials */}
-      <TestimonialSection />
+      
+       {/* Blog & Market Insights Section */}
+      <BlogSection blogs={featuredBlogs} />
 
       {/* Final Conversion CTA */}
       <CTABanner />

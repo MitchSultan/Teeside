@@ -66,13 +66,13 @@ export default function NeighborhoodExplorer() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className=" flex justify-between text-center mb-12"
         >
-          <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
+          {/* <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
             Explore by Location
-          </span>
-          <h2 className="section-title">NMA Neighborhoods</h2>
-          <p className="section-subtitle mx-auto mt-3">
+          </span> */}
+          <h2 className="text-left">Explore by <br></br> <span className="text-(--color-gold)">Neighborhoods</span></h2>
+          <p className="max-w-xl text-right mt-3">
             From the bustling streets of Westlands to the serene suburbs of Kileleshwa — discover your ideal neighborhood
           </p>
         </motion.div>

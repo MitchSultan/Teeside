@@ -74,6 +74,25 @@ export interface NewsletterSubscriber {
 }
 
 export type TourStatus = 'pending' | 'confirmed' | 'completed' | 'cancelled';
+export type BlogStatus = 'published' | 'draft';
+
+export interface Blog {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  cover_image: string | null;
+  category: string;
+  author_name: string;
+  author_avatar: string | null;
+  read_time: string;
+  published_at: string;
+  status: BlogStatus;
+  featured: boolean;
+  created_at: string;
+  updated_at: string;
+}
 
 export interface VirtualTourBooking {
   id: string;
@@ -96,3 +115,4 @@ export interface PaginatedResult<T> {
   pageSize: number;
   totalPages: number;
 }
+

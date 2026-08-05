@@ -120,11 +120,11 @@ export default function MarketSnapshot() {
           transition={{ duration: 0.5 }}
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10"
         >
-          <div>
-            <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
+          <div  >
+            {/* <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
               Market Intelligence
-            </span>
-            <h2 className="section-title">Nairobi Price Index</h2>
+            </span> */}
+            <h2 className="section-title">Nairobi <br></br><span className="text-(--color-gold)">Price Index</span></h2>
             <p className="section-subtitle mt-2">
               Real-time market trends to inform your investment decisions
             </p>

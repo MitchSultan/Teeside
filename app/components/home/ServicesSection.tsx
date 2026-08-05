@@ -109,7 +109,7 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
       </div>
 
       <Link
-        href="/services"
+        href={`/services/${service.id}`}
         className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-navy)] group-hover:text-[var(--color-gold-dark)] transition-colors pt-2"
       >
         Learn More About {service.title}
@@ -126,11 +126,11 @@ export default function ServicesSection() {
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[var(--color-gold)]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-full flex flex-col md:flex-row justify-between mb-8 gap-4">
+        <div className="max-w-full flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-navy)] tracking-tight">
-            Our Core <br className="hidden sm:inline" /> <span className="text-[var(--color-gold-dark)]">Services</span>
+            Our Core <br className="hidden sm:inline" /> <span className="text-[var(--color-gold)]">Services</span>
           </h2>
-          <p className="section-subtitle text-base sm:text-lg text-[var(--color-text-secondary)] max-w-xl">
+          <p className="section-subtitle max-w-3xl text-base sm:text-lg text-[var(--color-text-secondary)] max-w-xl">
             Comprehensive real estate solutions engineered for peace of mind, maximum yield, and total legal transparency across Kenya.
           </p>
         </div>

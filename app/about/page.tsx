@@ -45,8 +45,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { value: '12+', label: 'Years in Market' },
-              { value: '2,5+', label: 'Properties Listed' },
-              { value: '1,2+', label: 'Happy Clients' },
+              { value: '25+', label: 'Properties Listed' },
+              { value: '12+', label: 'Happy Clients' },
               { value: 'KES 1.2B', label: 'Portfolio Value' },
             ].map((s, i) => (
               <motion.div key={s.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="shadow-md p-5 text-center">

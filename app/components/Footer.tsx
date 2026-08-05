@@ -112,6 +112,7 @@ export default function Footer() {
               {[
                 { label: 'Browse Properties', href: '/properties' },
                 { label: 'Our Services', href: '/services' },
+                { label: 'Blog & Articles', href: '/blog' },
                 { label: 'Diaspora Portal', href: '/diaspora' },
                 { label: 'Mortgage Calculator', href: '/tools/mortgage-calculator' },
                 { label: 'Market Insights', href: '/market' },

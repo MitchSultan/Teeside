@@ -8,8 +8,8 @@ const feeCategories = [
     category: 'Landlords & Property Owners',
     target: 'Full Management & Letting',
     fees: [
-      { name: 'Property Management Commission', rate: '8% – 10%', detail: 'Of monthly collected rent. Includes maintenance dispatch, tenant relations, and billing.' },
-      { name: 'Tenant Placement / Letting Fee', rate: '50% of 1st Month Rent', detail: 'One-off fee for marketing, background vetting, lease agreement drafting, and check-in.' },
+      { name: 'Urban commercial Buildings', rate: '5%', detail: 'Of gross collectible rent and service charge.' },
+      { name: 'Residential properties ', rate: '7.5% of gross monthly rent', detail: 'One-off fee for marketing, background vetting, lease agreement drafting, and check-in.' },
       { name: 'Lease Renewal Fee', rate: 'KES 5,000', detail: 'Applicable upon successful 12-month lease renewal with existing tenant.' },
     ],
   },
@@ -37,7 +37,7 @@ export default function FeeStructure() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-inter)' }}>
             Our Clear <br></br> <span className="text-[var(--color-gold)]">Fee Structure</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/70">
+          <p className="mt-4 max-w-xl text-base sm:text-lg text-white/70">
             No hidden costs. No surprise charges. Transparent percentages and flat fees so you always know your exact return.
           </p>
         </div>

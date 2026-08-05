@@ -18,6 +18,7 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Properties', href: '/properties' },
     { label: 'Services', href: '/services' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Diaspora Portal', href: '/diaspora' },
     { label: 'Market Insights', href: '/market' },
     { label: 'Mortgage Calculator', href: '/tools/mortgage-calculator' },
@@ -49,9 +50,9 @@ export default function Navbar() {
                 style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
               >
                 Teeside{' '}
-                <span className={scrolled ? 'text-[var(--color-gold)]' : 'text-[var(--color-gold-light)]'}>
+                {/* <span className={scrolled ? 'text-[var(--color-gold)]' : 'text-[var(--color-gold-light)]'}>
                   Properties
-                </span>
+                </span> */}
               </span>
             </Link>
 
@@ -61,9 +62,9 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/10 ${scrolled
-                      ? 'text-(--color-text-secondary) hover:text-(--color-navy) hover:bg-(--color-bg-tertiary)'
-                      : 'text-red/50 hover:text-black'
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${scrolled
+                      ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-navy)] hover:bg-[var(--color-bg-tertiary)]'
+                      : 'text-white/90 hover:text-white hover:bg-white/10'
                     }`}
                 >
                   {link.label}

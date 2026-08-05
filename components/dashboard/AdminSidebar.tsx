@@ -8,6 +8,7 @@ import {
   IconDashboard,
   IconHome,
   IconMail,
+  IconNews,
   IconUsers,
   IconVideo,
 } from '@tabler/icons-react'
@@ -28,6 +29,7 @@ import { createClient } from '@/lib/supabase/client'
 const navItems = [
   { title: 'Overview', url: '/admin', icon: IconDashboard },
   { title: 'Properties', url: '/admin/properties', icon: IconHome },
+  { title: 'Blogs', url: '/admin/blogs', icon: IconNews },
   { title: 'Agents', url: '/admin/agents', icon: IconUsers },
   { title: 'Contacts', url: '/admin/contacts', icon: IconMail },
   { title: 'Virtual Tours', url: '/admin/tours', icon: IconVideo },
