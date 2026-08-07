@@ -16,14 +16,14 @@ const services = [
     id: 'property-management',
     icon: Building2,
     title: 'Property Management',
-    tagline: 'End-to-end asset care & maximum occupancy',
+    tagline: 'We manage & consult on property related issues. ',
     description:
-      'Full landlord representation including tenant vetting, rent collection via automated M-Pesa/Bank APIs, maintenance dispatch, and quarterly financial statements.',
+      'We provide comprehensive property management services, including tenant relations, maintenance coordination, and financial reporting.',
     features: [
       'Automated rent collection & reconciliation',
       '24/7 emergency repair dispatch',
-      'Tenant vetting & background checks',
-      'Digital lease agreement management',
+      'carrying out property inspections and maintenance',
+      'Supervision of caretakers and service providers.',
     ],
     highlight: '0% Vacancy Strategy',
   },
@@ -31,46 +31,46 @@ const services = [
     id: 'letting',
     icon: KeyRound,
     title: 'Letting & Leasing',
-    tagline: 'Fast placement of qualified tenants',
+    tagline: 'Letting of vacant premises',
     description:
-      'We market your property across high-traffic digital platforms, conduct structured viewings (including virtual HD walkthroughs for diaspora), and negotiate optimal lease terms.',
+      'We undertake letting of vacant premises on behalf of our clients. This include residential and commercial lettings.',
     features: [
       'Multi-channel listing exposure',
-      'ArdhiSasa verified documentation',
-      'Structured tenant onboarding',
-      'Deposit escrow management',
+      'Tenant pre-screening & background checks',
+      'Advertising & marketing campaigns',
+      'Lease agreement drafting & execution',
     ],
-    highlight: 'Avg. 14 Days to Let',
+    highlight: 'Avg. 28 Days to Let',
   },
   {
     id: 'sales',
     icon: TrendingUp,
     title: 'Property Sales',
-    tagline: 'Maximum market valuation & swift closing',
+    tagline: 'we are the link between buyers and sellers.',
     description:
-      'From valuation analysis to final title deed transfer, we handle commercial and residential sales across the Nairobi Metropolitan Area with complete legal transparency.',
+      'Through advertising and networking with other players in the market.   We are the link between buyers and sellers. We provide a platform for property owners to sell their properties and for buyers to find their dream homes.  ',
     features: [
-      'Data-backed market valuation',
-      'Dedicated advocate oversight',
-      'International diaspora desk',
-      'Transparent escrow settlement',
+      'Advertising & marketing campaigns',
+      'Listing on multiple property portals',
+      'Professional photography & virtual tours',
+      'Negotiation & closing support',
     ],
-    highlight: 'KES 2B+ Sales Closed',
+    highlight: 'KES 1B+ Sales Closed',
   },
   {
     id: 'consultancy',
     icon: Compass,
     title: 'Real Estate Consultancy',
-    tagline: 'Strategic advisory for investors & developers',
+    tagline: 'Provide credible and reliable advice to clients on real estate matters.',
     description:
-      'Feasibility studies, yield optimization, land acquisition due diligence, and capital growth advisory tailored for high-net-worth investors and diaspora buyers.',
+      'Our exposure in financial matters and our experince in real estate matters has enabled us provide credible and un-matched services.',
     features: [
-      'ArdhiSasa title verification reports',
-      'Rental yield & ROI forecasting',
+      'Credible services on real estate matters',
+      'Tax consultancy and accounting services',
       'Tax & compliance guidance',
       'Development feasibility studies',
     ],
-    highlight: 'Institutional Guidance',
+    highlight: 'Credible advice',
   },
 ]
 
@@ -151,7 +151,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden">
+        <div className="md:hidden py-2 ">
           <Carousel className="w-full">
             <CarouselContent>
               {services.map((service) => (
@@ -160,10 +160,10 @@ export default function ServicesSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-6">
+            {/* <div className="flex justify-center gap-2 mt-6">
               <CarouselPrevious className="static translate-y-0" />
               <CarouselNext className="static translate-y-0" />
-            </div>
+            </div> */}
           </Carousel>
         </div>
       </div>

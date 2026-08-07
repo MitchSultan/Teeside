@@ -3,8 +3,8 @@ import { z } from 'zod'
 export const propertySchema = z.object({
   title: z.string().min(3, 'Title must be at least 3 characters'),
   description: z.string().optional(),
-  property_type: z.enum(['residential', 'commercial', 'land']),
-  status: z.enum(['available', 'rented', 'under-maintenance']),
+  property_type: z.enum(['residential', 'commercial', 'land', 'apartment', 'house', 'penthouse', 'bedsitter', 'studio', 'townhouse', 'villa']),
+  status: z.enum(['available', 'rented', 'under-maintenance', 'ready', 'off-plan', 'repossessed', 'for-sale', 'sold']),
   address: z.string().min(5, 'Address is required'),
   city: z.string().min(2, 'City is required'),
   county: z.string().min(2, 'County is required'),

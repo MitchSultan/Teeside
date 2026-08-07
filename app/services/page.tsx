@@ -49,7 +49,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-20 lg:pt-24 pb-16">
       {/* Hero Header */}
-      <section className="bg-[url('/images/hero1.jpg')] bg-no-repeat bg-center bg-cover py-16 lg:py-24 relative overflow-hidden">
+      <section className="bg-[url('/images/erma.jpg')] bg-no-repeat bg-center bg-cover py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">

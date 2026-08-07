@@ -109,7 +109,7 @@ export default function LettingPage() {
       </div>
 
       {/* Hero Header */}
-      <section className="bg-[url('/images/hero2.jpg')] bg-no-repeat bg-center bg-cover py-16 lg:py-24 relative overflow-hidden my-4">
+      <section className="bg-[url('/images/serbg.jpeg')] bg-no-repeat bg-center bg-cover py-16 lg:py-24 relative overflow-hidden my-4">
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">

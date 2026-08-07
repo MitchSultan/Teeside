@@ -38,9 +38,9 @@ export default function FeaturedListings() {
             {/* <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
               Curated Selection
             </span> */}
-            <h2 className="section-title">Featured <br></br> <span className="text-[var(--color-gold)]">Properties</span></h2>
+            <h2 className="section-title">Managed  <br></br> <span className="text-[var(--color-gold)]">Properties</span></h2>
             <p className="section-subtitle mt-2">
-              Handpicked listings across the Nairobi Metropolitan Area
+              Some of the properties we manage around Nairobi Metropolitan Area. 
             </p>
           </div>
           <Link

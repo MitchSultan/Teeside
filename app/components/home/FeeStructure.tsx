@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Check, HelpCircle } from 'lucide-react'
 
 const feeCategories = [
@@ -9,17 +10,17 @@ const feeCategories = [
     target: 'Full Management & Letting',
     fees: [
       { name: 'Urban commercial Buildings', rate: '5%', detail: 'Of gross collectible rent and service charge.' },
-      { name: 'Residential properties ', rate: '7.5% of gross monthly rent', detail: 'One-off fee for marketing, background vetting, lease agreement drafting, and check-in.' },
-      { name: 'Lease Renewal Fee', rate: 'KES 5,000', detail: 'Applicable upon successful 12-month lease renewal with existing tenant.' },
+      { name: 'Residential properties ', rate: '7.5% of gross monthly rent', detail: 'Negotiable subject to a minimum of 7.5% of the gross monthly rent but in consideration to the condition and location of the property.' },
+      { name: 'Letting Fees', rate: '50% of one month rent ,', detail: 'Propeties under Teesides management the fees shall be 50% of one months rent.' },
     ],
   },
   {
-    category: 'Sellers & Buyers',
-    target: 'Property Sales & Advisory',
+    category: 'Sales commision',
+    target: 'rural & urban properties',
     fees: [
-      { name: 'Property Sale Agency Fee', rate: '3% – 5%', detail: 'Of agreed final sales price. Includes marketing, viewing coordination, and legal handover.' },
-      { name: 'Buyer Representation & Title Search', rate: '1.5%', detail: 'Includes digital ArdhiSasa verification and title deed authentication.' },
-      { name: 'Valuation & Advisory Assessment', rate: 'Flat KES 15,000', detail: 'Comprehensive valuation report and market yield forecasting.' },
+      { name: 'Rural properties', rate: '5%', detail: 'With regard to accessibility and distancefrom Nairobi. Our charges are 5% of the selling price.' },
+      { name: 'Urban properties', rate: '2.5% - 5%', detail: 'Our charges for urban properties are based on the selling price. Our rate are 2.5% - 5%.' },
+      { name: 'Tax consultation & Book Keeping', rate: 'Vary with work', detail: 'Our charges vary based on the complexity and time required for each engagement.Cliets with our propety management portfolio enjoy discounted rates.' },
     ],
   },
 ]
@@ -86,7 +87,7 @@ export default function FeeStructure() {
 
               <div className="mt-8 pt-4 flex items-center gap-2 text-xs text-white/50">
                 <HelpCircle size={14} className="text-[var(--color-gold)]" />
-                <span>Custom portfolio discounts available for landlords with 10+ units.</span>
+                <span>For custom portfolio discounts <a href="/contact" className="text-[var(--color-gold)] hover:underline">contact Us today</a>.</span>
               </div>
             </motion.div>
           ))}

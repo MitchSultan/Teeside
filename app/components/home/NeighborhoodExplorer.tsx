@@ -66,15 +66,14 @@ export default function NeighborhoodExplorer() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className=" flex justify-between text-center mb-12"
+          className=" flex flex-col md:flex-row justify-between text-center mb-12"
         >
           {/* <span className="text-sm font-semibold text-[var(--color-gold)] uppercase tracking-wider mb-2 block">
             Explore by Location
           </span> */}
-          <h2 className="text-left">Explore by <br></br> <span className="text-(--color-gold)">Neighborhoods</span></h2>
-          <p className="max-w-xl text-right mt-3">
-            From the bustling streets of Westlands to the serene suburbs of Kileleshwa — discover your ideal neighborhood
-          </p>
+          <h2 className="section-title text-left">Explore by <br></br> <span className="text-(--color-gold)">Neighborhoods</span></h2>
+          <p className="max-w-xl text-left md:text-right mt-3">
+          We have properties all over Nairobi and its sorroundings.</p>
         </motion.div>
 
         {/* Desktop Grid */}
@@ -101,10 +100,10 @@ export default function NeighborhoodExplorer() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-6">
+            {/* <div className="flex justify-center gap-2 mt-6">
               <CarouselPrevious className="static translate-y-0" />
               <CarouselNext className="static translate-y-0" />
-            </div>
+            </div> */}
           </Carousel>
         </div>
       </div>

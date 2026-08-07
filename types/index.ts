@@ -1,5 +1,5 @@
-export type PropertyType = 'residential' | 'commercial' | 'land';
-export type PropertyStatus = 'available' | 'rented' | 'under-maintenance';
+export type PropertyType = 'residential' | 'commercial' | 'land' | 'apartment' | 'house' | 'penthouse' | 'bedsitter' | 'studio' | 'townhouse' | 'villa';
+export type PropertyStatus = 'available' | 'rented' | 'under-maintenance' | 'ready' | 'off-plan' | 'repossessed' | 'for-sale' | 'sold';
 export type ContactStatus = 'new' | 'read' | 'replied';
 export type RentalStatus = 'active' | 'expired' | 'terminated';
 

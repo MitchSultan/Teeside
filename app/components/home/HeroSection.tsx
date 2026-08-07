@@ -70,16 +70,7 @@ export default function HeroSection() {
             className="mb-6"
           >
             <div className="inline-flex flex-row-reverse rounded-full p-1 bg-white/10 backdrop-blur-md border border-white/15">
-              <button
-                onClick={() => setAudience('tenant')}
-                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                  audience === 'tenant'
-                    ? 'bg-white text-[var(--color-navy)] shadow-lg'
-                    : 'text-white/70 hover:text-white'
-                }`}
-              >
-                I&apos;m Looking for a Home
-              </button>
+              
               <button
                 onClick={() => setAudience('landlord')}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
@@ -88,8 +79,19 @@ export default function HeroSection() {
                     : 'text-white/70 hover:text-white'
                 }`}
               >
-                I&apos;m a Property Owner
+                LandLord
               </button>
+              <button
+                onClick={() => setAudience('tenant')}
+                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  audience === 'tenant'
+                    ? 'bg-white text-[var(--color-navy)] shadow-lg'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                Tenant
+              </button>
+              
             </div>
           </motion.div>
 
@@ -102,8 +104,8 @@ export default function HeroSection() {
             className="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-2xl"
           >
             {audience === 'tenant'
-              ? 'Discover verified apartments, villas, and plots across the Nairobi Metropolitan Area. From Kilimani penthouses to Ruaka starter homes — find your perfect match with ArdhiSasa-verified listings.'
-              : 'Partner with Nairobi\'s most trusted property management team. We handle tenant vetting, rent collection, maintenance, and legal compliance — so you can earn passive income with zero hassle.'}
+              ? 'Discover verified apartments, and hostels across the Nairobi Area. From Thika to Ruaka, find your perfect match.'
+              : 'Partner with Nairobi\'s most trusted property management team. We handle tenant vetting, rent collection, maintenance, and legal compliance.'}
           </motion.p>
 
           {/* CTA Buttons */}

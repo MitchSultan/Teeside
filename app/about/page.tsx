@@ -2,27 +2,22 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Building2, Shield, Award, Users, TrendingUp, Target, Eye, Heart, MapPin, Phone, Mail } from 'lucide-react';
+import { Shield, Target, Eye, Heart } from 'lucide-react';
+import MDDeclaration from '@/app/components/about/MDDeclaration';
+import TeamSection from '@/app/components/about/TeamSection';
 
 const values = [
   { icon: Shield, title: 'Trust & Transparency', desc: 'Every property verified. Every document authenticated. Every transaction tracked.' },
-  { icon: Target, title: 'Client-First Approach', desc: 'Whether you\'re a first-time renter or a seasoned investor, your goals drive everything we do.' },
-  { icon: Eye, title: 'Market Intelligence', desc: 'Data-driven insights to help you make informed property decisions in the NMA.' },
-  { icon: Heart, title: 'Community Impact', desc: 'We believe quality housing transforms communities. We build partnerships, not just portfolios.' },
-];
-
-const team = [
-  { name: 'Geoffery Mwangombe', role: 'CEO & Founder', desc: '15+ years in Nairobi real estate' },
-  { name: 'Sarah Wanjiku', role: 'Head of Property Management', desc: 'Managing 500+ units across NMA' },
-  { name: 'Grace Otieno', role: 'Head of Sales', desc: 'KES 2B+ in closed transactions' },
-  { name: 'Peter Kamau', role: 'Head of Diaspora Services', desc: 'Connecting investors from 12 countries' },
+  { icon: Target, title: 'Our Vision', desc: 'To provide quality services that exceed the expectation of our esteemed customers in line with ethical practices within the industry.' },
+  { icon: Eye, title: 'Our Goal', desc: 'To be a reputable leader in the real estate industry through regional expansion.' },
+  { icon: Heart, title: 'Our Mission', desc: 'To build long term relationships with our customers and clients providing the most unique and comprehensive customer service.' },
 ];
 
 export default function AboutPage() {
   return (
     <div className="pt-20 lg:pt-24 pb-16">
       {/* Hero */}
-      <section className="bg-[url('/images/hero1.jpg')] bg-no-repeat bg-center bg-cover py-16 lg:py-24 relative overflow-hidden">
+      <section className="bg-[url('/images/night.jpg')] bg-no-repeat bg-top bg-cover py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
@@ -63,14 +58,13 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">Our Mission</span>
-              <h2 className="section-title mb-4">Making Nairobi Property Accessible to Everyone</h2>
+              <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">About Us</span>
+              <h2 className="section-title mb-4">We have over 12 yrs of property management experience</h2>
               <p className="text-(--color-text-secondary) leading-relaxed mb-4">
-                We exist to democratize real estate in the Nairobi Metropolitan Area. From a young professional looking for their first bedsitter in Kitengela, to a diaspora investor seeking a verified villa in Kileleshwa — we serve every segment with equal dedication.
-              </p>
-              <p className="text-(--color-text-secondary) leading-relaxed">
-                Our dual-focus model uniquely positions us: we find the best tenants for landlords, and the best homes for tenants. This alignment of interests creates a virtuous cycle of trust, occupancy, and returns.
-              </p>
+                 Teeside Mangement Ltd was incorporated in Kenya in 2014. The directors are Geoffrey Wangombe and Mrs Grace Mwaniki. They both have over 40+ yrs in sales and property management with a rich background in real estates development and construction. </p>
+                  <p className="text-(--color-text-secondary) leading-relaxed">
+                We believe in doing whatever is required to  earn the right to be your agent and we let our actions speak for themselves. You get the results you expected because we focus on your individual needs.
+                  </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {values.map((v, i) => (
@@ -85,27 +79,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-16 lg:py-24 bg-(--color-bg-primary)">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">Leadership</span>
-            <h2 className="section-title">Meet Our Team</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {team.map((t, i) => (
-              <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="shadow-md p-6 text-center">
-                <div className="w-16 h-16 rounded-full bg-(--color-bg-tertiary) mx-auto mb-4 flex items-center justify-center">
-                  <Users size={28} className="text-(--color-navy)" />
-                </div>
-                <h3 className="text-base font-semibold text-(--color-text-primary)" style={{ fontFamily: 'var(--font-inter)' }}>{t.name}</h3>
-                <p className="text-xs text-(--color-gold) font-medium mb-2">{t.role}</p>
-                <p className="text-xs text-(--color-text-muted)">{t.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* MD Declaration Section */}
+      <MDDeclaration />
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* CTA */}
       <section className="py-16 bg-(--color-navy)">

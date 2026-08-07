@@ -40,8 +40,13 @@ export function PropertiesFilters() {
         <SelectContent>
           <SelectItem value="all">All statuses</SelectItem>
           <SelectItem value="available">Available</SelectItem>
+          <SelectItem value="ready">Ready</SelectItem>
+          <SelectItem value="off-plan">Off-Plan</SelectItem>
           <SelectItem value="rented">Rented</SelectItem>
           <SelectItem value="under-maintenance">Under Maintenance</SelectItem>
+          <SelectItem value="repossessed">Repossessed</SelectItem>
+          <SelectItem value="for-sale">For Sale</SelectItem>
+          <SelectItem value="sold">Sold</SelectItem>
         </SelectContent>
       </Select>
       <Select
@@ -54,6 +59,13 @@ export function PropertiesFilters() {
           <SelectItem value="residential">Residential</SelectItem>
           <SelectItem value="commercial">Commercial</SelectItem>
           <SelectItem value="land">Land</SelectItem>
+          <SelectItem value="apartment">Apartment</SelectItem>
+          <SelectItem value="house">House</SelectItem>
+          <SelectItem value="penthouse">Penthouse</SelectItem>
+          <SelectItem value="bedsitter">Bedsitter</SelectItem>
+          <SelectItem value="studio">Studio</SelectItem>
+          <SelectItem value="townhouse">Townhouse</SelectItem>
+          <SelectItem value="villa">Villa</SelectItem>
         </SelectContent>
       </Select>
     </div>

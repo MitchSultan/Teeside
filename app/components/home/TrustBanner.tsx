@@ -44,10 +44,10 @@ export default function TrustBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className=" flex justify-between text-center mb-10"
+          className=" flex flex-col md:flex-row justify-between text-left md:text-center mb-10"
         >
-          <h2 className="section-title">Trusted by <br></br><span className="text-(--color-gold)"> Thousands </span></h2>
-          <p className=" text-right  mt-2">
+          <h2 className="section-title ">Trusted by <br></br><span className="text-(--color-gold)"> Thousands </span></h2>
+          <p className=" text-left  mt-2">
             Fully licensed, verified, and committed to transparency
           </p>
         </motion.div>

@@ -126,6 +126,13 @@ export function PropertyForm({ property }: PropertyFormProps) {
               <SelectItem value="residential">Residential</SelectItem>
               <SelectItem value="commercial">Commercial</SelectItem>
               <SelectItem value="land">Land</SelectItem>
+              <SelectItem value="apartment">Apartment</SelectItem>
+              <SelectItem value="house">House</SelectItem>
+              <SelectItem value="penthouse">Penthouse</SelectItem>
+              <SelectItem value="bedsitter">Bedsitter</SelectItem>
+              <SelectItem value="studio">Studio</SelectItem>
+              <SelectItem value="townhouse">Townhouse</SelectItem>
+              <SelectItem value="villa">Villa</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -139,8 +146,13 @@ export function PropertyForm({ property }: PropertyFormProps) {
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="available">Available</SelectItem>
+              <SelectItem value="ready">Ready for Occupation</SelectItem>
+              <SelectItem value="off-plan">Off-Plan</SelectItem>
               <SelectItem value="rented">Rented</SelectItem>
               <SelectItem value="under-maintenance">Under Maintenance</SelectItem>
+              <SelectItem value="repossessed">Repossessed</SelectItem>
+              <SelectItem value="for-sale">For Sale</SelectItem>
+              <SelectItem value="sold">Sold</SelectItem>
             </SelectContent>
           </Select>
         </div>

@@ -13,39 +13,39 @@ import {
 const features = [
   {
     icon: ShieldCheck,
-    title: 'ArdhiSasa Digital Verification',
+    title: 'Solving Real Estate Challenges',
     description:
-      'Every title deed and land document is cross-checked against Kenya’s official Ministry of Lands database before listing.',
+      'Unique & creatives solutions that meets our clients expectations not only by ethical principles and practices in real estate.',
   },
   {
     icon: Globe,
-    title: 'Dedicated Diaspora Desk',
+    title: 'Quality & Ethical Service',
     description:
-      'Power of Attorney guidance, live HD video tours, and multi-timezone consultations for Kenyans living abroad.',
+      'Professional quality of services by provide by a highly motivated team.',
   },
   {
     icon: Cpu,
-    title: 'Automated Financial Tech',
+    title: 'Representative & Responsive',
     description:
-      'M-Pesa Paybill & automated bank API reconciliations mean landlords receive instant monthly payout alerts.',
+      'Courage and readiness to communicate, act and represent our clients at all times, even in crisis..',
   },
   {
     icon: Award,
-    title: '12+ Years Market Leadership',
+    title: 'Financial & Tax Consultancy',
     description:
-      'Managing over 500+ units across Nairobi, Kitengela, Westlands, and Kilimani with KES 1.2B+ under management.',
+      'Our financial and tax consultancy background endears us to our clients who enjoy value addition in tax consultation and accounting.',
   },
   {
     icon: FileSearch,
-    title: 'Zero Hidden Fees',
+    title: 'Training',
     description:
-      'Complete transparency in our fee structure. Clear breakdown of commission, management rates, and disbursements.',
+      'Continous training and adoption of technological dynamics.',
   },
   {
     icon: Zap,
-    title: 'Rapid Tenant Placement',
+    title: '24/7 presence',
     description:
-      'Advanced digital marketing and pre-screened tenant waitlists keep average property vacancy times under 14 days.',
+      '24/7 availability at our offices and a resounding presence in the properties.',
   },
 ]
 
@@ -70,15 +70,15 @@ export default function WhyChooseUs() {
   return (
     <section className="py-20 lg:py-28 bg-[var(--color-bg-primary)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className=" max-w-full flex flex-row justify-between items-center mx-auto mb-16">
+        <div className=" max-w-full flex flex-col md:flex-row justify-between items-center mx-auto mb-16">
           {/* <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold-dark)] bg-[var(--color-gold)]/10 px-3.5 py-1.5 rounded-full inline-block mb-3">
             The Teeside Advantage
           </span> */}
           <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-navy)] tracking-tight">
-            Why Choose <br></br> <span className="text-[var(--color-gold)]">Teeside Management Ltd</span>
+            Why Choose <br></br> <span className="text-(--color-gold)">Teeside Management Ltd</span>
           </h2>
-          <p className="section-subtitle max-w-xl text-right mt-4 text-base sm:text-lg text-[var(--color-text-secondary)]">
-            Bridging trust, technology, and real estate excellence across the Nairobi Metropolitan Area.
+          <p className="section-subtitle max-w-xl text-left md:text-right mt-4 text-base sm:text-lg text-[var(--color-text-secondary)]">
+            As property owners, we perfectly understand the needs of property owners.
           </p>
         </div>
 

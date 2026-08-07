@@ -14,11 +14,11 @@ export default function BlogSection({ blogs }: { blogs: Blog[] }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold-dark)] bg-[var(--color-gold)]/10 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-3">
+            {/* <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold-dark)] bg-[var(--color-gold)]/10 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-3">
               <Newspaper size={14} /> Market Intelligence & Guides
-            </span>
+            </span> */}
             <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-navy)] tracking-tight">
-              Latest <span className="text-[var(--color-gold)]">Market Insights</span>
+              Latest<br></br> <span className="text-[var(--color-gold)]">Market Insights</span>
             </h2>
           </div>
           <Link

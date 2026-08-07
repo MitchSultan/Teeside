@@ -53,7 +53,7 @@ export default async function Home() {
       {/* Landlord CTA */}
       <LandlordCTA />
       {/* Testimonials */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* Trust & Credibility */}
       <TrustBanner />

@@ -163,10 +163,10 @@ export default function MarketSnapshot() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-6">
+            {/* <div className="flex justify-center gap-2 mt-6">
               <CarouselPrevious className="static translate-y-0" />
               <CarouselNext className="static translate-y-0" />
-            </div>
+            </div> */}
           </Carousel>
         </div>
       </div>

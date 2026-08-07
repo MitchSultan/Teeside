@@ -17,7 +17,7 @@ export async function getPublicProperties(filters?: {
   let query = supabase
     .from('properties')
     .select('*', { count: 'exact' })
-    .eq('status', 'available')
+    .in('status', ['available', 'ready', 'for-sale'])
     .order('created_at', { ascending: false })
 
   if (filters?.search) {
@@ -51,7 +51,7 @@ export async function getPublicProperty(id: string): Promise<Property | null> {
     .from('properties')
     .select('*')
     .eq('id', id)
-    .eq('status', 'available')
+    .in('status', ['available', 'ready', 'for-sale'])
     .single()
 
   if (error) return null
