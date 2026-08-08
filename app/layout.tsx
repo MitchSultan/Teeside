@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, DM_Sans, Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ConditionalChrome } from "@/components/conditional-chrome";
@@ -64,6 +65,22 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("h-full", "antialiased", inter.variable, dmSans.variable, "font-sans", geist.variable)}
     >
+      <head>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6PJX8DN0K9"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6PJX8DN0K9');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-[var(--color-bg-primary)]">
         <ConditionalChrome>{children}</ConditionalChrome>
         <Toaster richColors position="top-right" />
