@@ -50,9 +50,9 @@ export default function MorePage() {
         {/* Contact Bar */}
         <div className="mt-8 p-5 neu-raised text-center">
           <p className="text-sm text-[var(--color-text-secondary)] mb-3">Need help? Call us anytime</p>
-          <a href="tel:+254700000000" className="btn-primary inline-flex">
+          <a href="tel:+254722841455" className="btn-primary inline-flex">
             <Phone size={18} />
-            +254 700 000 000
+            +254 722 841 455
           </a>
         </div>
       </div>

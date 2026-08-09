@@ -158,9 +158,9 @@ export default function PropertyManagementPage() {
               <a href="#consultation" className="btn-primary !px-6 !py-3">
                 Request Property Assessment
               </a>
-              <a href="#packages" className="btn-secondary !px-6 !py-3">
+              {/* <a href="#packages" className="btn-secondary !px-6 !py-3">
                 View Management Fees
-              </a>
+              </a> */}
             </div>
           </motion.div>
         </div>
@@ -259,7 +259,7 @@ export default function PropertyManagementPage() {
       </section>
 
       {/* Pricing / Packages */}
-      <section id="packages" className="py-16 lg:py-24 bg-white">
+      {/* <section id="packages" className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold-dark)] bg-[var(--color-gold)]/10 px-3.5 py-1.5 rounded-full inline-block mb-3">
@@ -324,7 +324,7 @@ export default function PropertyManagementPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Accordion */}
       <section className="py-16 lg:py-24 bg-[var(--color-bg-secondary)]">

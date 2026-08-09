@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ConditionalChrome } from "@/components/conditional-chrome";
 import { Toaster } from "@/components/ui/sonner";
+import { SitePopups } from "@/components/SitePopups";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -21,7 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Teeside Properties — Nairobi's Premier Property Platform | Find, Rent & Invest",
+  title: "Teeside property management limited, Nairobi's Premier property management | Find, Rent & Invest",
   description:
     "Discover verified apartments, villas, and plots across the Nairobi Metropolitan Area. Teeside Properties offers trusted property management for landlords and a seamless search experience for tenants and diaspora investors.",
   keywords: [
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
     "Kitengela plots",
   ],
   openGraph: {
-    title: "Teeside Properties — Nairobi's Premier Property Platform",
+    title: "Teeside property management limited, Nairobi's Premier Property Management",
     description:
       "Find verified properties across the Nairobi Metropolitan Area. Trusted by 1,200+ clients with KES 4.2B under management.",
     type: "website",
     locale: "en_KE",
-    siteName: "Teeside Properties",
+    siteName: "Teeside property management limited",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teeside Properties — Nairobi Real Estate",
+    title: "Teeside property management limited, Nairobi's Premier Property Management",
     description:
       "Discover verified apartments, villas, and plots across Nairobi. Your gateway to stress-free property investment.",
   },
@@ -81,8 +82,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body suppressHydrationWarning className="min-h-full flex flex-col bg-[var(--color-bg-primary)]">
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-(--color-bg-primary)">
         <ConditionalChrome>{children}</ConditionalChrome>
+        <SitePopups />
         <Toaster richColors position="top-right" />
       </body>
     </html>

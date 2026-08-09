@@ -63,8 +63,8 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${scrolled
-                      ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-navy)] hover:bg-[var(--color-bg-tertiary)]'
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                      ? 'text-(--color-text-secondary) hover:text-(--color-navy) hover:bg-(--color-bg-tertiary)'
+                      : 'text-white/50 hover:text-white hover:bg-white/10'
                     }`}
                 >
                   {link.label}
@@ -179,11 +179,11 @@ export default function Navbar() {
 
                 <div className="mt-8 pt-6 border-t border-[var(--color-warm-gray)]">
                   <a
-                    href="tel:+254700000000"
+                    href="tel:+254722841455"
                     className="flex items-center gap-3 text-[var(--color-text-secondary)] hover:text-[var(--color-navy)] transition-colors"
                   >
                     <Phone size={18} />
-                    <span className="text-sm font-medium">+254 700 000 000</span>
+                    <span className="text-sm font-medium">+254 722 841 455</span>
                   </a>
                 </div>
               </div>

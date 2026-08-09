@@ -2,10 +2,15 @@ import Link from 'next/link'
 import { AdminHeader } from '@/components/dashboard/AdminHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getAdminStats } from '@/lib/queries/properties'
+import { getAnalyticsOverviewData } from '@/lib/queries/analytics'
+import { AnalyticsOverviewCard } from '@/components/dashboard/AnalyticsOverviewCard'
 import { Button } from '@/components/ui/button'
 
 export default async function AdminOverviewPage() {
-  const stats = await getAdminStats()
+  const [stats, analytics] = await Promise.all([
+    getAdminStats(),
+    getAnalyticsOverviewData(),
+  ])
 
   const cards = [
     { label: 'Properties', value: stats.properties, href: '/admin/properties' },
@@ -18,6 +23,10 @@ export default async function AdminOverviewPage() {
     <>
       <AdminHeader title="Overview" />
       <div className="flex flex-1 flex-col gap-6 p-4 lg:p-6">
+        {/* Main Analytics Widget */}
+        <AnalyticsOverviewCard metrics={analytics.latest} />
+
+        {/* Real Estate Admin Stats Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <Card key={card.label}>
@@ -39,3 +48,4 @@ export default async function AdminOverviewPage() {
     </>
   )
 }
+

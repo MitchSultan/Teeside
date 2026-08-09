@@ -31,11 +31,11 @@ export default function FeeStructure() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-gold)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className=" max-w-full flex flex-row justify-between items-center mx-auto mb-16">
+        <div className=" max-w-full flex flex-col md:flex-row justify-between md:items-center  mb-16">
           {/* <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gold)] bg-white/10 px-3.5 py-1.5 rounded-full inline-block mb-3">
             Transparent Pricing
           </span> */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-inter)' }}>
+          <h2 className="text-3xl text-left sm:text-4xl lg:text-5xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-inter)' }}>
             Our Clear <br></br> <span className="text-[var(--color-gold)]">Fee Structure</span>
           </h2>
           <p className="mt-4 max-w-xl text-base sm:text-lg text-white/70">

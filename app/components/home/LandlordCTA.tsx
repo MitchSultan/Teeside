@@ -75,7 +75,7 @@ export default function LandlordCTA() {
               <span className="text-[var(--color-gold)]">Property Portfolio</span>
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
-              Join 50+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance — while you earn passive income.
+              Join 10+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -92,7 +92,7 @@ export default function LandlordCTA() {
             {/* Social Proof */}
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap gap-6">
               <div>
-                <p className="text-2xl font-bold text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-inter)' }}>500+</p>
+                <p className="text-2xl font-bold text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-inter)' }}>10+</p>
                 <p className="text-xs text-white/50">Properties Managed</p>
               </div>
               <div>

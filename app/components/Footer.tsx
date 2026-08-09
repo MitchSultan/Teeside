@@ -167,7 +167,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-            <p>© {new Date().getFullYear()} Teeside Properties. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Teeside Properties. All rights reserved. <span><a href="https://madebymitch.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Made by Mitch</a></span></p>
             <p>
               Estate Agents Registration Board (EARB) Reg. No. EARB/2024/1234 | KPDA Member
             </p>

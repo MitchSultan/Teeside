@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import {
   IconBuilding,
+  IconChartBar,
   IconDashboard,
   IconHome,
   IconMail,
@@ -28,6 +29,7 @@ import { createClient } from '@/lib/supabase/client'
 
 const navItems = [
   { title: 'Overview', url: '/admin', icon: IconDashboard },
+  { title: 'Analytics', url: '/admin/analytics', icon: IconChartBar },
   { title: 'Properties', url: '/admin/properties', icon: IconHome },
   { title: 'Blogs', url: '/admin/blogs', icon: IconNews },
   { title: 'Agents', url: '/admin/agents', icon: IconUsers },

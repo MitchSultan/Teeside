@@ -80,84 +80,110 @@ export default function FeaturedListings() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="snap-start shrink-0 w-[320px] sm:w-[340px]"
               >
-                <Link href={`/properties/${property.id}`} className="block">
-                  <div className="shadow-md bg-tertiary overflow-hidden group">
-                    {/* Image */}
-                    <div className="relative h-52 overflow-hidden">
-                      <Image
-                        src={property.images[0]}
-                        alt={property.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        sizes="340px"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <Link href={`/properties/${property.id}`} className="block h-full">
+                  {/* Full-bleed image card with glassmorphism content overlay */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg group h-[420px] cursor-pointer">
 
-                      {/* Status Badge */}
+                    {/* Background Image — covers entire card */}
+                    <Image
+                      src={property.images[0]}
+                      alt={property.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="340px"
+                    />
+
+                    {/* Dark scrim so text is always readable */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10 transition-opacity duration-300 group-hover:from-black/85" />
+
+                    {/* ── Top badges ── */}
+                    <div className="absolute top-3 left-3 right-3 flex items-start justify-between z-10">
                       <div
-                        className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold text-white"
+                        className="px-3 py-1 rounded-full text-xs font-semibold text-white backdrop-blur-sm"
                         style={{ backgroundColor: getStatusColor(property.status) }}
                       >
                         {getStatusLabel(property.status)}
                       </div>
 
-                      {/* Verified Badge */}
                       {property.verified && (
-                        <div className="absolute top-3 right-3 verified-badge !bg-white/90 !text-[var(--color-success)]">
+                        <div className="verified-badge !bg-white/90 !text-[var(--color-success)] backdrop-blur-sm">
                           <Shield size={12} />
                           ArdhiSasa
                         </div>
                       )}
-
-                      {/* Price */}
-                      <div className="absolute bottom-3 left-3 price-badge">
-                        {formatPrice(property.price, property.currency)}
-                      </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-medium text-[var(--color-gold-dark)] bg-[var(--color-gold)]/10 px-2 py-0.5 rounded">
+                    {/* ── Glassmorphism content panel ── */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 z-10 p-4 rounded-b-2xl"
+                      style={{
+                        background: 'rgba(255,255,255,0.10)',
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        borderTop: '1px solid rgba(255,255,255,0.15)',
+                      }}
+                    >
+                      {/* Type chip + neighbourhood */}
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span
+                          className="text-[11px] font-semibold px-2 py-0.5 rounded-full"
+                          style={{
+                            background: 'rgba(192,34,49,0.85)',
+                            color: '#fff',
+                          }}
+                        >
                           {getPropertyTypeLabel(property.type)}
                         </span>
-                        <span className="text-xs text-[var(--color-text-muted)]">
+                        <span className="text-[11px] text-white/70 truncate">
                           {property.neighborhood}
                         </span>
                       </div>
 
-                      <h3 className="text-sm font-semibold text-[var(--color-text-primary)] leading-snug line-clamp-2 mb-3 group-hover:text-[var(--color-steel)] transition-colors">
+                      {/* Title */}
+                      <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 mb-3 group-hover:text-white/90 transition-colors">
                         {property.title}
                       </h3>
 
-                      {/* Meta */}
-                      <div className="flex items-center gap-4 text-[var(--color-text-muted)]">
+                      {/* Meta row */}
+                      <div className="flex items-center gap-3 text-white/75 mb-3">
                         {property.bedrooms > 0 && (
                           <div className="flex items-center gap-1">
-                            <Bed size={14} />
+                            <Bed size={13} />
                             <span className="text-xs">{property.bedrooms} Bed{property.bedrooms > 1 ? 's' : ''}</span>
                           </div>
                         )}
                         <div className="flex items-center gap-1">
-                          <Bath size={14} />
+                          <Bath size={13} />
                           <span className="text-xs">{property.bathrooms} Bath{property.bathrooms > 1 ? 's' : ''}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Maximize size={14} />
+                          <Maximize size={13} />
                           <span className="text-xs">{property.sqft.toLocaleString()} sqft</span>
                         </div>
                       </div>
 
-                      {/* Price per sqft */}
-                      <div className="mt-3 pt-3 border-t border-[var(--color-warm-gray)] flex items-center justify-between">
-                        <span className="text-xs text-[var(--color-text-muted)]">
-                          KES {property.pricePerSqft.toLocaleString()}/sqft
+                      {/* Price row */}
+                      <div
+                        className="flex items-center justify-between pt-2.5"
+                        style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}
+                      >
+                        <span
+                          className="text-sm font-bold"
+                          style={{ color: 'var(--color-gold-light)' }}
+                        >
+                          {formatPrice(property.price, property.currency)}
+                          <span className="text-xs font-normal text-white/60 ml-0.5">/mo</span>
                         </span>
-                        {property.rentalYield && property.rentalYield > 0 && (
-                          <span className="text-xs font-medium text-[var(--color-success)]">
-                            {property.rentalYield}% yield
+                        <div className="flex items-center gap-2">
+                          {property.rentalYield && property.rentalYield > 0 && (
+                            <span className="text-xs font-semibold text-emerald-400">
+                              {property.rentalYield}% yield
+                            </span>
+                          )}
+                          <span className="text-[11px] text-white/50">
+                            KES {property.pricePerSqft.toLocaleString()}/sqft
                           </span>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </div>
