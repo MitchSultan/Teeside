@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Teeside property management limited, Nairobi's Premier Property Management",
     description:
-      "Find verified properties across the Nairobi Metropolitan Area. Trusted by 1,200+ clients with KES 4.2B under management.",
+      "We manage all your propeties in Nairobi. Your property our priority",
     type: "website",
     locale: "en_KE",
     siteName: "Teeside property management limited",
