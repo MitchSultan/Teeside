@@ -163,7 +163,7 @@ export default function FeaturedListings() {
                       </div>
 
                       {/* Price row */}
-                      <div
+                      {/* <div
                         className="flex items-center justify-between pt-2.5"
                         style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}
                       >
@@ -184,7 +184,7 @@ export default function FeaturedListings() {
                             KES {property.pricePerSqft.toLocaleString()}/sqft
                           </span>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Link>

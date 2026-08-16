@@ -16,11 +16,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Properties', href: '/properties' },
+    { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Blog', href: '/blog' },
     { label: 'Diaspora Portal', href: '/diaspora' },
-    { label: 'Market Insights', href: '/market' },
+    // { label: 'Market Insights', href: '/market' },
     { label: 'Mortgage Calculator', href: '/tools/mortgage-calculator' },
   ];
 

@@ -47,7 +47,7 @@ export interface Testimonial {
 export const properties: Property[] = [
   {
     id: '1',
-    title: 'Executive 2-Bedroom Apartment-Northlands estate, Thika Rd ',
+    title: 'Executive 2-Bedroom Apartment-Northlands estate,  ',
     slug: 'executive-2br',
     type: 'apartment',
     status: 'ready',
@@ -58,7 +58,7 @@ export const properties: Property[] = [
     bathrooms: 2,
     sqft: 1445,
     constructionYear: 2024,
-    neighborhood: 'Thika Road',
+    neighborhood: 'Kamakis',
     neighborhoodSlug: 'thika-road',
     address: 'Northlands Estate, Thika Road, Nairobi',
     description: 'Exquisite modern apartment in the heart of Thika Road featuring floor-to-ceiling windows, Italian marble finishes, and a private balcony overlooking the city skyline. Walking distance to Yaya Centre and Junction Mall.',

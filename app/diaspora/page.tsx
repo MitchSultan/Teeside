@@ -82,7 +82,7 @@ export default function DiasporaPage() {
   return (
     <div className="pt-20 lg:pt-24 pb-16">
       {/* Hero */}
-      <section className="relative bg-[url(/images/dia-hero.jpeg)] bg-no-repeat bg-cover bg-center py-16 lg:py-24 overflow-hidden">
+      <section className="relative bg-[url(/images/house.jpg)] bg-no-repeat bg-cover bg-center py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
@@ -90,23 +90,23 @@ export default function DiasporaPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 mb-6">
+            {/* <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 mb-6">
               <Globe size={16} className="text-(--color-gold)" />
               <span className="text-sm font-medium text-white/90">For Kenyans Abroad</span>
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-5" style={{ fontFamily: 'var(--font-inter)' }}>
               Invest in Nairobi Real Estate <br></br><span className="text-(--color-gold)">From Anywhere</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl">
-              Whether you&apos;re in London, Dubai, or Atlanta — we make buying and managing property back home simple, secure, and transparent. No surprises, no fraud, just results.
+              Whether you&apos;re in the UK, Canada, USA or Australia, we make buying and managing property back home simple, secure, and transparent. No surprises, no fraud, just results.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-4">
-              <Link href="/properties" className="btn-primary">
+              {/* <Link href="/properties" className="btn-primary">
                 Browse Verified Properties <ArrowRight size={18} />
-              </Link>
+              </Link> */}
               <Link href="#virtual-inspection" className="btn-secondary">
                 <Video size={18} /> Book Virtual Inspection
               </Link>
@@ -154,7 +154,7 @@ export default function DiasporaPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">Virtual Inspections</span>
-              <h2 className="section-title mb-4">See Every Detail — Without Leaving Home</h2>
+              <h2 className="section-title mb-4">See Every Detail, Without Leaving Home</h2>
               <p className="section-subtitle mb-6">Book a live video walkthrough with our on-ground agents at a time that suits your timezone. Available 7 days a week.</p>
 
               <div className="space-y-4 mb-8">

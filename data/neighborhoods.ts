@@ -25,8 +25,8 @@ export const neighborhoods: Neighborhood[] = [
     highlights: ['Yaya Centre', 'Prestige Plaza', 'Nairobi Hospital'],
   },
   {
-    name: 'Sukari',
-    slug: 'westlands',
+    name: 'Thika Town',
+    slug: 'thika-town',
     image: '/images/erma.jpg',
     avgPrice: 12000000,
     priceLabel: 'KES 12M avg',
@@ -37,8 +37,8 @@ export const neighborhoods: Neighborhood[] = [
     highlights: ['Sarit Centre', 'Two Rivers Mall', 'Westgate'],
   },
   {
-    name: 'Mirema',
-    slug: 'mirema',
+    name: 'Kamakis',
+    slug: 'kamakis',
     image: '/images/golden.jpg',
     avgPrice: 22000000,
     priceLabel: 'KES 22M avg',
@@ -49,8 +49,8 @@ export const neighborhoods: Neighborhood[] = [
     highlights: ['Valley Arcade', 'International Schools', 'Green Spaces'],
   },
   {
-    name: 'Ruaka',
-    slug: 'ruaka',
+    name: 'Thika',
+    slug: 'thika',
     image: '/images/house.jpg',
     avgPrice: 7500000,
     priceLabel: 'KES 7.5M avg',
