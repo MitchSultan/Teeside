@@ -132,7 +132,7 @@ export default function MDDeclaration() {
             <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <p className="font-serif italic text-lg sm:text-xl text-(--color-gold) tracking-wide">
-                  Geoffrey Mwangombe
+                  Geoffrey M. Wang'ombe
                 </p>
                 <p className="text-xs text-white/60 font-medium">
                   Managing Director, Teeside Management Ltd
