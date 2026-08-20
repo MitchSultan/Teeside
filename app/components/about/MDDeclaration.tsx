@@ -55,7 +55,7 @@ export default function MDDeclaration() {
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-white tracking-wide" style={{ fontFamily: 'var(--font-inter)' }}>
-                    Geoffrey Mwangombe
+                    Geoffrey M. Wang'ombe
                   </h3>
                   <p className="text-xs text-white/70 mt-0.5">
                     Founder &amp; MD, Teeside Management Ltd
