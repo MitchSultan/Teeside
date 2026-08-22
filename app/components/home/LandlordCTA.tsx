@@ -75,7 +75,7 @@ export default function LandlordCTA() {
               <span className="text-[var(--color-gold)]">Property Portfolio</span>
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
-              Join 10+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance.
+              Join 92+ landlords who trust Teeside to maximize their rental income. Our full-service property management handles everything from tenant acquisition to maintenance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

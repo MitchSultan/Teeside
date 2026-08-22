@@ -38,7 +38,7 @@ export default function AboutSection() {
                   <span className="text-sm font-semibold text-(--color-gold) uppercase tracking-wider mb-2 block">About Us</span>
                   <h2 className="section-title mb-4">We offer solutions to property owners problems </h2>
                   <p className="text-(--color-text-secondary) leading-relaxed mb-4">
-                 Teeside Mangement Ltd was incorporated in Kenya in 2014. The directors are Geoffrey Wangombe and Mrs Grace Mwaniki. They both have over 40+ yrs in sales and property management with a rich background in real estates development and construction. </p>
+                 Teeside Mangement Ltd was incorporated in Kenya in 2014. The directors are Geoffrey Wangombe and Mrs Grace Mwaniki. They both have over 15+ yrs in sales and property management with a rich background in real estates development and construction. </p>
                   <p className="text-(--color-text-secondary) leading-relaxed">
                 We believe in doing whatever is required to  earn the right to be your agent and we let our actions speak for themselves. You get the results you expected because we focus on your individual needs.
                   </p>
